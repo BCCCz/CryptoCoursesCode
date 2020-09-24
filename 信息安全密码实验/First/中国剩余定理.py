@@ -18,15 +18,16 @@ for i in range(l):
 
 for i in range(l):
     M = mi[i]*M
-
+s
 for i in range(l):
     Mi = M/mi[i]
     Mi = gmpy2.mpz(Mi)
     Mj = invert(Mi,mi[i])#逆元
     xj = powmod( (Mi * Mj * a[i]),1 ,M ) 
 
-    x = 0 + powmod( xj ,1 ,M)
+    x = x + powmod( xj ,1 ,M)
 
+print(x)
 
  
   
