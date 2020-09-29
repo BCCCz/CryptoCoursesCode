@@ -16,12 +16,12 @@ def get_prime(key_size):
 Prime = get_prime(1024)
 
 #大素数写入文件
-with open("CryptoCourcesCode/print.txt","w") as f :
+with open("CryptoCourcesCode/信息安全密码实验/First/prime.txt","w") as f :
     f.write(str(Prime))
 f.close()
 
 #文件再次读取大素数
-with open("CryptoCourcesCode/print.txt","r") as f :
+with open("CryptoCourcesCode/信息安全密码实验/First/prime.txt","r") as f :
     m = f.read()
 print(m)
 
