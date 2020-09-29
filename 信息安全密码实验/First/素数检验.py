@@ -12,8 +12,21 @@ def get_prime(key_size):
         if is_prime(num):
             return num
 
-#m待检验
-m = get_prime(1024)
+#m生成的大素数
+Prime = get_prime(1024)
+
+#大素数写入文件
+with open("CryptoCourcesCode/print.txt","w") as f :
+    f.write(str(Prime))
+f.close()
+
+#文件再次读取大素数
+with open("CryptoCourcesCode/print.txt","r") as f :
+    m = f.read()
+print(m)
+
+#转换int型方便检验
+m = int(m)
 
 #k循环次数
 k = 4
@@ -29,7 +42,7 @@ for i in range(1,k+2):
             print("Not Prime")
             break
         else:
-            print("Maybe Prime and the probability is")
+            print("Maybe Priexitme and the probability is")
             print(1-pow(1/2,i))
             
 # 验证结果是否正确
