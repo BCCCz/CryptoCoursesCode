@@ -5,6 +5,7 @@ import gmpy2
 import random
 import math
 
+'''
 #素数生成
 def get_prime(key_size):
     while True:
@@ -19,11 +20,11 @@ Prime = get_prime(1024)
 with open("CryptoCourcesCode/信息安全密码实验/First/prime.txt","w") as f :
     f.write(str(Prime))
 f.close()
+'''
 
 #文件再次读取大素数
-with open("CryptoCourcesCode/信息安全密码实验/First/prime.txt","r") as f :
+with open("/home/bc/桌面/CODE/CryptoCourcesCode/信息安全密码实验/First/prime.txt","r") as f :
     m = f.read()
-print(m)
 
 #转换int型方便检验
 m = int(m)
@@ -34,18 +35,20 @@ for i in range(1,k+2):
     a = random.randint(k,m)
     g = gcd(a,m)
     if(g != 1):
-        print("Not Prime")
-        break
+        print("The number is not Prime")
+        sys.exit(0)
     else:
         r = pow(a,m-1,m)
         if(r != 1):
-            print("Not Prime")
-            break
+            print("The number is not Prime")
+            sys.exit(0)
         else:
             print("Maybe Priexitme and the probability is")
             print(1-pow(1/2,i))
             
+print('The number is prime')
 # 验证结果是否正确
-print(m)
-print("Test:Is prime?")
+
+
+print('结果验证')
 print(gmpy2.is_prime(m))
