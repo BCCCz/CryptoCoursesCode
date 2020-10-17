@@ -30,7 +30,7 @@ with open("/home/bc/桌面/CODE/CryptoCourcesCode/信息安全密码实验/First
 m = int(m)
 
 #k循环次数
-k = 4
+k = 10
 for i in range(1,k+2):
     a = random.randint(k,m)
     g = gcd(a,m)
