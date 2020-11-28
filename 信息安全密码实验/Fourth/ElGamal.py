@@ -10,6 +10,13 @@ from gmpy2 import *
 import math
 import random
 
+while(1):
+    p = getPrime(500)
+    p = 2*p + 1
+    if(isPrime(p) == 1):
+        break
+print("大素数p:",p)#大素数
+
 def multimod(a,k,n):    #快速幂取模
     ans=1
     while(k!=0):
@@ -25,39 +32,35 @@ def yg(n):		# 这样默认求最小原根
         if multimod(i,k,n)!=1:
             return i
 
-while(1):
-    p = getPrime(150)
-    p = 2*p + 1
-    if(isPrime(p) == 1):
-        break
-print("大素数p:",p)#大素数
-
 g = yg(p)
-print("最小原根g:",g)#原跟
+print("原跟g:",yg(p))
 
-a = 765
+a = 505556266784463047965613248977313529937904465202194582376939105222022128344681278296039885125079302858937013709099268978459265044287546458918579687767099
 
 #明文
 with open("/home/bc/桌面/CODE/CryptoCourcesCode/信息安全密码实验/Fourth/data/secret0.txt","r") as f :
     m = f.read()
+    m = int(m)
 print("明文m:",m)
+
 
 #加密
 k = random.randint(1,p-2)
 print("k:",k)
 c1 = powmod(g,k,p)
-
-r = pow(g,a)
-r = pow(r,k)
-r = r*m
-
-c2 = powmod(r,1,p)
 print("c1:",c1)
+
+
+r1 = powmod(g,a*k,p)
+r2 = powmod(m,1,p)
+r = r1*r2
+c2 = powmod(r,1,p)
 print("c2:",c2)
+
 
 #解密
 v = powmod(c1,a,p)
-c = mpz(c1**a)
-v = invert(c,p)
-m = (c2*v) % p
-print(m)
+
+v_1 = invert(v,p)
+m2 = (c2*v_1) % p
+print("明文",m2)
