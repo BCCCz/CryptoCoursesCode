@@ -38,7 +38,7 @@ print("原跟g:",yg(p))
 a = 505556266784463047965613248977313529937904465202194582376939105222022128344681278296039885125079302858937013709099268978459265044287546458918579687767099
 
 #明文
-with open("/home/bc/桌面/CODE/CryptoCourcesCode/信息安全密码实验/Fourth/data/secret0.txt","r") as f :
+with open("D:\CODE\CryptoCoursesCode\CryptoCoursesCode\信息安全密码实验\Fourth\data\secret1.txt","r") as f :
     m = f.read()
     m = int(m)
 print("明文m:",m)
