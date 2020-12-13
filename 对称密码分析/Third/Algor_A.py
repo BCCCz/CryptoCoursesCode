@@ -12,10 +12,6 @@ fx=[3,9,16,35,37,47,56,60]           #反馈多项式的系数
 t=len(fx)                            #计算抽头数
 
 
-import scipy
-import sys,time
-import re
-import math
 
 #读取序列z
 def ReadFile(filename):
@@ -32,12 +28,6 @@ def writeFile(filename):
         file_object.write('0.75\n'+str(data).replace(' ','')[1:-1]+',')
     finally:
         file_object.close()
-
-N=4000000   #序列数
-n=60    #级数
-fx=[3,9,16,35,37,47,56,60]           #反馈多项式的系数
-# fx=[1,2,3,5]
-t=len(fx)              #计算抽头数
 
 
 M=round(math.log(N/(2*n),2)*(t+1))   #计算每位平均需要校验方程数
@@ -207,6 +197,6 @@ def ChangeHaming(zn_temp):
 
 
 
-zn=ReadFile('data.txt')
+zn=ReadFile('D:\CODE\CryptoCoursesCode\CryptoCoursesCode\对称密码分析\Third\data.txt')
 #zn_temp=Prospective(12800,zn[n:n+60])
 ChangeHaming(zn[n:n+60])

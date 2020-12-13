@@ -20,8 +20,8 @@ def length(Ciphertext):
         #求各子密文组的拟重合指数的平均值
         Average=CoincidenceIndex / Keylength
         Keylength += 1
-        #均值＞0.6即可退出循环
-        if Average > 0.06:
+        #均值＞0.65即可退出循环
+        if Average > 0.065:
             break
     Keylength -= 1
     return Keylength
@@ -76,7 +76,7 @@ def getKey(Ciphertext,length):
                 ch = chr(j+97)
         key.append(ch)
     return key
-
+#在求得密钥长度之后，通过穷举密钥字母的每一种可能取值（A到Z总共26种），并且针对每一行求其在某一取值下重合指数，重合指数最高的情况下该行最有可能为明文原文
 
 Ciphertext1 = 'krkpekmcwxtvknugcmkxfwmgmjvpttuflihcumgxafsdajfupgzzmjlkyykxd\
 vccyqiwdncebwhyjmgkazybtdfsitncwdnolqiacmchnhwcgxfzlwtxzlvgqe\

@@ -4,14 +4,9 @@ import sys, time
 import random
 import re
 
-
-
-
 an=[[0 for i in range(9)]for i in range(180)]
 xn=[0 for i in range(4000000)]
 assumeright=[0 for i in range(4000000)]
-
-
 
 
 def ReadFile(filename):
@@ -111,9 +106,9 @@ def FindSumMax():
             print("have max sum from n:",maxn)
 
 def CheckResult():
-    data = ReadFile("data.txt")
+    data = ReadFile("D:\CODE\CryptoCoursesCode\CryptoCoursesCode\对称密码分析\Third\data.txt")
     temp=assumeright[2026839:2026898]=data[2026839:2026898]
-    rare = ReadFile("data.txt")
+    rare = ReadFile("D:\CODE\CryptoCoursesCode\CryptoCoursesCode\对称密码分析\Third\data.txt")
     count=0
     changecount=0
     while count/(3999940-2026839)<0.7 or count/(3999940-2026839)>0.8:
