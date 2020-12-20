@@ -172,8 +172,8 @@ def sm3_gg_j(x, y, z, j):
         ret = (x & y) | ((~ x) & z)
     return ret
 
-class CryptSM2(object):
 
+class CryptSM2(object):
     def __init__(self, private_key, public_key, ecc_table=default_ecc_table, mode=0):
         """
         mode: 0-C1C2C3, 1-C1C3C2 (default is 1)
@@ -342,8 +342,8 @@ class CryptSM2(object):
         data = data.hex()
         len_2 = 2 * self.para_len
         len_3 = len_2 + 64
+        #取出C1,C2,C3
         C1 = data[0:len_2]
-
         if self.mode:
             C3 = data[len_2:len_3]
             C2 = data[len_3:]
@@ -351,11 +351,14 @@ class CryptSM2(object):
             C2 = data[len_2:-64]
             C3 = data[-64:]
 
+
         xy = self._kg(int(self.private_key, 16), C1)
         # print('xy = %s' % xy)
         x2 = xy[0:self.para_len]
         y2 = xy[self.para_len:len_2]
         cl = len(C2)
+
+        #B4
         t = sm3_kdf(xy.encode('utf8'), cl/2)
         if int(t, 16) == 0:
             return None
