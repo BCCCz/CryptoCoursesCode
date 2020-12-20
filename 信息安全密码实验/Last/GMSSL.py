@@ -6,6 +6,7 @@ M2 验收方法
 4.运行后屏幕显示必要的椭圆曲线参数，以及明文、对应密文、解密后的明文。
 '''
 
+
 from random import choice
 import binascii
 from random import choice
