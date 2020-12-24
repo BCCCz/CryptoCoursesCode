@@ -374,9 +374,7 @@ class CryptSM2(object):
 private_key = '00B9AB0B828FF68872F21A837FC303668428DEA11DCD1B24429D0C99E24EED83D5'
 public_key = 'B9C9A6E04E9C91F7BA880429273747D7EF5DDEB0BB2FF6317EB00BEF331A83081A6994B8993F3F5D6EADDDB81872266C87C018FB4162F5AF347B483E24620207'
 sm2_crypt = CryptSM2(public_key=public_key, private_key=private_key)
-data = b"It has done me good, because of the color of the wheat fields. Go and look again at the roses. You will understand now that yours is unique in all the world. "
-
-
+data = b"Men have forgotten this truth. But you must not forget it. You become responsible, forever, for what you have tamed."
 enc_data = sm2_crypt.encrypt(data)
 print(default_ecc_table)
 dec_data =sm2_crypt.decrypt(enc_data)
